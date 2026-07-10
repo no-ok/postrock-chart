@@ -500,6 +500,11 @@ a {
 .search-input::placeholder {
   color: #aaa; }
 
+@media (max-width: 767px) {
+  .search-container {
+    position: relative;
+    width: 100%; } }
+
 .band-panel {
   margin-bottom: 20px; }
 
@@ -541,7 +546,8 @@ a {
   display: flex;
   align-items: center;
   overflow-x: auto;
-  margin-top: 10px; }
+  margin-top: 10px;
+  scrollbar-width: none; }
   .band-links a {
     display: block;
     border: 1px solid #ffffff14;
@@ -556,6 +562,9 @@ a {
     .band-links a:hover {
       background-color: #a0a0ff;
       color: #000; }
+
+.band-links::-webkit-scrollbar {
+  display: none; }
 
 @media (max-width: 767px) {
   .band-item .band-name {
