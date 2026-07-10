@@ -450,7 +450,7 @@ a {
 
 .tab-link.current {
   background-color: #2a292f;
-  background-image: radial-gradient(circle at 50% 45%, #80809554 0%, #24000000 60%); }
+  background-image: radial-gradient(circle at 50% 45%, #f6f6f654 0%, #24000000 80%); }
 
 .tab-pane {
   display: block;
