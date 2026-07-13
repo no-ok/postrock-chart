@@ -366,6 +366,11 @@ a {
   z-index: 1000;
   padding: 12px 0;
   background-color: #111; }
+  .main-header.fixed {
+    padding-top: 8px;
+    padding-bottom: 8px; }
+    .main-header.fixed .tab-link {
+      height: 38px; }
 
 .main-svg {
   width: 100%;
@@ -408,7 +413,7 @@ a {
     pointer-events: auto; }
 
 .bands-container {
-  padding-top: 20px; }
+  padding-bottom: 50px; }
 
 .band-info {
   padding: 10px;
@@ -467,8 +472,7 @@ a {
 .filters-container {
   background-color: #111;
   padding-bottom: 8px;
-  padding-top: 6px;
-  margin-bottom: -15px; }
+  padding-top: 6px; }
   .filters-container .container {
     display: flex;
     align-items: center;
@@ -485,11 +489,13 @@ a {
 
 .search-input {
   border: 1px solid gray;
-  height: 36px;
+  border: 1px solid transparent;
+  height: 38px;
   width: 100%;
   padding: 5px 5px 5px 40px;
   border-radius: 5px;
   background-color: #1b1b1b;
+  background-color: #2b2a2f;
   color: #fff;
   outline: none; }
 
@@ -500,15 +506,54 @@ a {
 .search-input::placeholder {
   color: #aaa; }
 
+.navigation-links {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #111;
+  width: 100%;
+  max-width: 930px;
+  margin: 0 auto;
+  padding: 12px;
+  overflow-x: auto;
+  opacity: 0;
+  pointer-events: none; }
+  .navigation-links a {
+    color: #aaa;
+    transition: 0.25s;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    padding: 0 5px;
+    white-space: nowrap; }
+    .navigation-links a:hover {
+      color: #fff;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px white; }
+
+.current .navigation-links {
+  opacity: 1;
+  pointer-events: auto; }
+
 @media (max-width: 767px) {
   .search-container {
     position: relative;
-    width: 100%; } }
+    width: 100%; }
+  .navigation-links {
+    justify-content: flex-start;
+    overflow-x: auto; }
+    .navigation-links a {
+      padding: 0 7px; } }
 
-.band-panel {
-  margin-bottom: 20px; }
+.band-panel:first-child .panel-head {
+  padding-top: 10px; }
 
 .panel-head {
+  padding-top: 50px;
   margin-bottom: 10px;
   font-size: 16px; }
 
@@ -531,8 +576,6 @@ a {
   font-size: 22px;
   letter-spacing: 0.5px;
   cursor: auto;
-  color: #a0a0ff;
-  color: #c2c2fe;
   color: #a8a8fe;
   margin-bottom: 3px; }
 
@@ -569,3 +612,7 @@ a {
 @media (max-width: 767px) {
   .band-item .band-name {
     font-size: 20px; } }
+
+@media (max-width: 420px) {
+  .band-item .band-name {
+    font-size: 18px; } }
